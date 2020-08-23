@@ -27,3 +27,14 @@ class FlowerModel{
 
   FlowerModel(this.color, this.type);
 }
+
+// Provider
+class FlowerListForProviderModel extends ChangeNotifier{
+  final List<FlowerModel> list = [];
+  int get countOfFlower => list.length;
+
+  void addFlower(FlowerModel flowerModel){
+    list.add(flowerModel);
+    notifyListeners();
+  }
+}

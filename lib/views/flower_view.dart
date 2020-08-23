@@ -41,10 +41,10 @@ class _FlowerViewState extends State<FlowerView> {
           },
           child: Icon(Icons.add),
         ),
-        body: _buildListForValueNotifier());
+        body: _buildForValueNotifier());
   }
 
-  ValueListenableBuilder<FlowerListModel> _buildListForValueNotifier() {
+  ValueListenableBuilder<FlowerListModel> _buildForValueNotifier() {
     return ValueListenableBuilder(
         valueListenable: flowerNotify,
         child: Text("Here is not affected by change"),
