@@ -1,5 +1,5 @@
-import 'package:StateManagement/models/flower.dart';
-import 'package:StateManagement/views/add_flower_with_provider_view.dart';
+import 'package:StateManagement/models/flower_for_provider.dart';
+import 'package:StateManagement/views/provider/add_flower_with_provider_view.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -40,8 +40,9 @@ class FlowerWithProviderView extends StatelessWidget {
 
   ListView _buildBody(BuildContext context) {
     return ListView.builder(
-        //itemCount: Provider.of<FlowerListForProviderModel>(context).countOfFlower,
-        itemCount: Provider.of<FlowerListForProviderModel>(context,listen: false).countOfFlower,
+        itemCount: Provider.of<FlowerListForProviderModel>(context).countOfFlower,
+        // or listen false
+        //itemCount: Provider.of<FlowerListForProviderModel>(context,listen: false).countOfFlower,
         itemBuilder: (context, index) {
           return Text(
               "${index + 1}.${Provider.of<FlowerListForProviderModel>(context).list[index].color}");
